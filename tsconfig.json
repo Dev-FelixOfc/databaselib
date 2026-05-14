@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "allowJs": true,
+    "checkJs": false,
+    "outDir": "lib",
+    "strict": false,
+    "noImplicitThis": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "moduleResolution": "node"
+  },
+  "include": ["src/*.ts"],
+  "exclude": ["node_modules", "src/db.ts"]
+}
