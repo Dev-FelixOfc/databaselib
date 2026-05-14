@@ -1,7 +1,7 @@
 import binarySearch from "./BinarySearch"
-import { IKeyedDB, Identifiable, Comparable, PaginationMode } from "./Types"
+import { IDatabaseLib, Identifiable, Comparable, PaginationMode } from "./Types"
 
-export default class KeyedDB<T, K> implements IKeyedDB<T, K> {
+export default class DatabaseLib<T, K> implements IDatabaseLib<T, K> {
   private array: Array<T>
   private dict: { [key: string]: T }
   private key: Comparable<T, K>
@@ -78,7 +78,7 @@ export default class KeyedDB<T, K> implements IKeyedDB<T, K> {
   }
 
   slice(start?: number, end?: number) {
-    const db = new KeyedDB (this.key, this.idGetter)
+    const db = new DatabaseLib (this.key, this.idGetter)
     db.array = this.array.slice (start, end)
     db.array.forEach (item => db.dict[ this.idGetter(item) ] = item)
     return db
@@ -121,7 +121,7 @@ export default class KeyedDB<T, K> implements IKeyedDB<T, K> {
   }
 
   filter(predicate: (value: T, index: number) => boolean) {
-    const db = new KeyedDB (this.key, this.idGetter)
+    const db = new DatabaseLib (this.key, this.idGetter)
     db.array = this.array.filter ((value, index) => {
       if (predicate(value, index)) {
         db.dict[ this.idGetter (value) ] = value
