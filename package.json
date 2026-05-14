@@ -3,15 +3,14 @@
   "version": "0.1.0",
   "description": "Biblioteca ligera para almacenar una base de datos en memoria.",
   "homepage": "https://github.com/Dev-FelixOfc/databaselib",
-  "main": "src/db.ts",
+  "main": "src/db.js",
   "type": "module",
   "keywords": [
     "db",
     "key"
   ],
   "scripts": {
-    "test": "mocha --timeout 60000 -r ts-node/register src/Tests.ts",
-    "build": "tsc"
+    "test": "mocha --timeout 60000 src/db2.js"
   },
   "author": "Dev-FelixOfc",
   "license": "MIT",
@@ -19,15 +18,11 @@
     "url": "git@github.com:Dev-FelixOfc/databaselib.git"
   },
   "files": [
-    "src/*"
+    "src/*.js"
   ],
   "dependencies": {},
   "devDependencies": {
-    "@types/mocha": "5.2.7",
-    "@types/node": "^14.0.14",
     "assert": "^2.0.0",
-    "mocha": "^8.0.1",
-    "ts-node-dev": "^1.0.0-pre.61",
-    "typescript": "^4.0.0"
+    "mocha": "^8.0.1"
   }
 }
